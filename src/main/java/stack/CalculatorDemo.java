@@ -1,8 +1,8 @@
 package stack;
 
-public class Calculator {
+public class CalculatorDemo {
     public static void main(String[] args) {
-        String expression = "3+2*6-2";
+        String expression = "300+2*6-20";
         //创建两个栈 数栈 符号栈
         ArrayStack2 numStack = new ArrayStack2(10);
         ArrayStack2 operStack = new ArrayStack2(10);
@@ -27,7 +27,7 @@ public class Calculator {
                         num1 = numStack.pop();
                         num2 = numStack.pop();
                         oper = operStack.pop();
-                        //res = numStack.cal(num1,num2,oper);
+                        res = numStack.cal(num1,num2,(char)oper);
                         //把结果入数栈
                         numStack.push(res);
                         //将当前符号入栈
@@ -76,8 +76,8 @@ public class Calculator {
             }
             num1 = numStack.pop();
             num2 = numStack.pop();
-            //oper = operStack.pop();
-            //res = numStack.cal(num1,num2,);
+            oper = operStack.pop();
+            res = numStack.cal(num1,num2,(char)oper);
             numStack.push(res);
         }
         int res2 = numStack.pop();

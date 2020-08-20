@@ -43,12 +43,12 @@ public class ArrayStackDemo {
         System.out.println("程序退出");
     }
 }
-class ArrayStack{
+class ArrayStack1{
     private int maxSize;//栈的大小
     private int[] stack;//数组，数组模拟栈，存放数据
     private int top=-1;//top表示栈顶，初始化为-1
     //构造器
-    public ArrayStack(int maxSize){
+    public ArrayStack1(int maxSize){
         this.maxSize=maxSize;
         stack=new int[this.maxSize];
     }

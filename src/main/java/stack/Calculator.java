@@ -66,9 +66,6 @@ public class Calculator{
                         //将当前符号入栈
                     }
                     operStack.push(ch);
-                } else {
-                    //为空直接入栈
-                    operStack.push(ch);
                 }
             } else {
                 //如果是数 则入数栈
@@ -82,18 +79,15 @@ public class Calculator{
                 keepNum += ch;
 
                 //如果ch已经是expression的最后一位，就直接入栈
-                if (index == expression.length() - 1) {
-                    numStack.push(Integer.parseInt(keepNum));
-                } else {
-                    //判断下一个是不是数字(注意是看后一位，不是index++)
+                if (!(index == expression.length() - 1)) {
                     char next = expression.substring(index + 1, index + 2).charAt(0);
                     if (!isOper(next)) {
                         keepNum += next;
                     }
-                    numStack.push(Integer.parseInt(keepNum));
                 }
-
-            }
+                numStack.push(Integer.parseInt(keepNum));
+                keepNum = "";
+                }
             index++;
             if(index >= expression.length()){
                 break;

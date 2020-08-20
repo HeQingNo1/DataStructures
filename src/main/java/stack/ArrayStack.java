@@ -14,6 +14,14 @@ public class ArrayStack {
         if(isFull()){
             throw new RuntimeException("栈已满");
         }
+        /**
+         * 扩容 阈值 0.8
+         *         if((top+1)/(maxSize*1.0) >= 0.8){
+         *             int[] array = java.util.Arrays.copyOf(stack,maxSize*2);
+         *             maxSize = maxSize*2;
+         *             stack = array;
+         *         }
+         */
         top++;
         stack[top] = val;
     }

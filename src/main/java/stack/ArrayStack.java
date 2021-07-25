@@ -58,4 +58,8 @@ public class ArrayStack {
         int index = top;
         return stack[index];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
